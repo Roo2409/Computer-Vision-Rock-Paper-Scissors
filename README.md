@@ -1,2 +1,1 @@
-# computer-vision-rock-paper-scissors
-Computer Visions
+# Computer Vision RPS
