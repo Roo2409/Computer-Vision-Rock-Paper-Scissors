@@ -5,14 +5,21 @@ def get_computer_choice():
       
 def get_user_choice(): 
   pick_one = input("choose one from list")  
- # if pick_one in list1:
   return pick_one
-  # else:
-  #    print("wrong letter")
+
+def get_winner(get_computer_choice , get_user_choice):
+  if t1 == t2:
+    print("It is a tie!")
+  elif t1 == "Rock" and t2 == "Scissors":
+    print("You lost")
+  else:
+    print("You won!")
+   
 
 
-#list1 = ["rock","paper","scissor"]
-t1= get_computer_choice()
+t1 = get_computer_choice()
 print(t1)
 t2 = get_user_choice()
 print(t2)
+t3 = get_winner("hi","hello")
+print(t3)
