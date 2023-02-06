@@ -1,16 +1,17 @@
 import random
-# ask_the_user: input("choose one from list")  
 def get_computer_choice():
-    return random.choice(list)
-    
-# ask_the_user: input("choose one from list")       
+   return random.choice(list)
+      
 def get_user_choice(): 
-  ask_the_user: input("choose one from list")  
-  if ask_the_user == list:
-     print(ask_the_user)
+  pick_one = input("choose one from list")  
+  if pick_one in list:
+     return pick_one
+  else:
+     print("wrong letter")
 
 
 list = ["rock","paper","scissor"]
-# ask_the_user: input("choose one from list")  
-t1 = get_user_choice()
+t1= get_computer_choice()
 print(t1)
+t2 = get_user_choice()
+print(t2)
