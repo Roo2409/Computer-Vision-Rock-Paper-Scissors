@@ -12,14 +12,16 @@ def get_winner(computer_choice , user_choice):
     print("It is a tie!")
   elif computer_choice == "Rock" and user_choice == "Scissors":
     print("You lost")
+    return "computer_choice is a winner"
   else:
     print("You won!")
+    return "user_choice is a winner"
    
 
 
-b1 = get_computer_choice()
-print(b1)
-b2 = get_user_choice()
-print(b2)
-t3 = get_winner(b1,b1)
+t1 = get_computer_choice()
+print(t1)
+t2 = get_user_choice()
+print(t2)
+t3 = get_winner(t1,t2)
 print(t3)
