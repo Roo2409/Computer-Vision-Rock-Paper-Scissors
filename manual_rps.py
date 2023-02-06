@@ -1,7 +1,7 @@
 import random
 def get_computer_choice():
-   list1 = ["Rock","Paper","Scissors"]
-   return random.choice(list1)
+  list1 = ["Rock","Paper","Scissors"]
+  return random.choice(list1)
       
 def get_user_choice(): 
   pick_one = input("choose one from list")  
@@ -24,12 +24,18 @@ def get_winner(computer_choice , user_choice):
     print("You won!")
     winner = "user_choice"
   return winner
-   
+def play():
+  get_computer_choice()
+  get_user_choice()
+  get_winner("computer_choice" , "user_choice")
+
+t4 = play()
+print(t4)
 
 
-t1 = get_computer_choice()
-print(t1)
-t2 = get_user_choice()
-print(t2)
-t3 = get_winner(t1,t2)
-print(t3)
+# get_computer_choice()
+# print(t1)
+# t2 = get_user_choice()
+# print(t2)
+# t3 = get_winner(t1,t2)
+# print(t3)
