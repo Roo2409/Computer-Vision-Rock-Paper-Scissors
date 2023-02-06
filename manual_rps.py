@@ -7,7 +7,7 @@ def get_user_choice():
   pick_one = input("choose one from list")  
   return pick_one
 
-def get_winner(get_computer_choice , get_user_choice):
+def get_winner(computer_choice , user_choice):
   if t1 == t2:
     print("It is a tie!")
   elif t1 == "Rock" and t2 == "Scissors":
