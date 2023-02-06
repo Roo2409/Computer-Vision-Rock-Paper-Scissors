@@ -8,18 +8,18 @@ def get_user_choice():
   return pick_one
 
 def get_winner(computer_choice , user_choice):
-  if t1 == t2:
+  if computer_choice == user_choice:
     print("It is a tie!")
-  elif t1 == "Rock" and t2 == "Scissors":
+  elif computer_choice == "Rock" and user_choice == "Scissors":
     print("You lost")
   else:
     print("You won!")
    
 
 
-t1 = get_computer_choice()
-print(t1)
-t2 = get_user_choice()
-print(t2)
-t3 = get_winner("hi","hello")
+b1 = get_computer_choice()
+print(b1)
+b2 = get_user_choice()
+print(b2)
+t3 = get_winner(b1,b1)
 print(t3)
