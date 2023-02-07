@@ -10,10 +10,10 @@ def timetime():
 timetime()
 computer_wins = 0
 user_wins=0
-round = 0
+round_played = 0
 list1 = ["Rock","Paper","Scissors"]
 while computer_wins <3 and user_wins <3:
-  print ("Starting round ", round + 1)
+  print ("Starting round ", round_played + 1)
   print ("-----------------------")
   computer_choice = random.choice(list1)
   user_choice = input("choice rock , paper, scissor")
@@ -27,7 +27,7 @@ while computer_wins <3 and user_wins <3:
   else: 
     print("user_choice you win")
     user_wins +=1
-round +=1
+round_played +=1
 if computer_wins > user_wins:
   print ("computer_wins is the winner")
 elif user_wins > computer_wins:
