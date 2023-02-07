@@ -28,8 +28,9 @@ while computer_wins <3 and user_wins <3:
     print("user_choice you win")
     user_wins +=1
 round +=1
-
 if computer_wins > user_wins:
   print ("computer_wins is the winner")
-else:
+elif user_wins > computer_wins:
   print ("user_wins is the winner")
+else:
+   print("the game is over")
