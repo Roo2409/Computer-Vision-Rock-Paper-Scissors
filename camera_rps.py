@@ -2,6 +2,7 @@ import cv2
 from keras.models import load_model
 import numpy as np
 import time
+import random
 def get_prediction():
   model = load_model('keras_model.h5')
   cap = cv2.VideoCapture(0)
@@ -24,11 +25,41 @@ def get_prediction():
   cv2.destroyAllWindows()
   return prediction
 
-
+computer_wins = 0
+user_wins= 0
+rounds_played = 0
 list1 = ["rock","paper","scissors","nothing"]
+computer_choice = random.choice(list1)
+print(computer_choice)
+user_choice = get_prediction()
+print(user_choice)
+while computer_wins <3 and user_wins <3:
+  def get_winner(computer_choice , user_choice):
+    rounds_played +=1
+    if computer_choice == user_choice:
+      print("It is a tie!")
+      winner = "tie"
+    elif (computer_choice == "Rock"and user_choice == "Scissors") or (computer_choice == "Paper" and user_choice == "Rock") or (computer_choice == "Scissors"and user_choice == "Paper"):
+      print("You lost")
+      winner = "computer_choice"
+      computer_wins +=1
+    
+    else:
+      print("You won!")
+      winner = "user_choice"
+      user_wins +=1
+      
+    # return winner
+if computer_wins > user_wins:
+  print(computer_wins, "is a winner")
+elif user_wins > computer_wins:
+  print(user_wins, "is a winner")
+else:
+  print("The game is over")
 
-t1 = get_prediction()
-print(t1)
+get_prediction()
+get_winner()
+
 # cv2.imshow()
 
 
