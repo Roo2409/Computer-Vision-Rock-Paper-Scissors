@@ -53,9 +53,9 @@ def get_winner(computer_choice , user_choice):
       user_wins +=1
       
     # return winner
-  if computer_wins > user_wins:
+  if computer_wins == 3:
      print(computer_wins, "is a winner")
-  elif user_wins > computer_wins:
+  elif user_wins == 3 :
       print(user_wins, "is a winner")
   else:
       print("The game is over")
