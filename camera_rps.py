@@ -20,18 +20,18 @@ def get_prediction():
     cv2.imshow('frame', frame)
     # Press q to close the window 
     print(prediction)
-    if cv2.waitKey(10) & 0xFF == ord('q'):
+    if cv2.waitKey(30) & 0xFF == ord('q'):
       break
+  cv2.imshow()
   cap.release()
   # Destroy all the windows
   cv2.destroyAllWindows()
   return prediction
 
-computer_wins = 0
-user_wins= 0
-rounds_played = 0
-
 def get_winner(computer_choice , user_choice):
+  computer_wins = 0
+  user_wins= 0
+  rounds_played = 0
   while computer_wins <3 and user_wins <3:
     
     computer_choice = random.choice(list1[:3])
@@ -61,8 +61,8 @@ def get_winner(computer_choice , user_choice):
       print("The game is over")
 
 
-get_winner()
+get_winner("t1","t2")
 
-# cv2.imshow()
+
 
 
