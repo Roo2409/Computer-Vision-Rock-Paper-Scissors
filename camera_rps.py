@@ -9,20 +9,30 @@ def get_prediction():
   cap = cv2.VideoCapture(0)
   data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
   start_time = time.time()
-  while time.time() < start_time+4: 
+  while time.time() < start_time+10: 
+    count_down = str(int(start_time+10-time.time()))
+    #print(count_down)
     ret, frame = cap.read()
+
+    # frame_test= np.array(frame)
+    # frame_test.shape                 #to find the dimension of your webcam
+    # print(frame_test.shape)
     resized_frame = cv2.resize(frame, (224, 224), interpolation = cv2.INTER_AREA)
     image_np = np.array(resized_frame)
     normalized_image = (image_np.astype(np.float32) / 127.0) - 1 # Normalize the image
     data[0] = normalized_image
     prediction = model.predict(data)
     prediction = list1[np.argmax(prediction)]
+    cv2.putText(frame, "User_choice",(50,50),cv2.FONT_HERSHEY_PLAIN,5,(255,50,50),4)
+    cv2.putText(frame, count_down,(150,150),cv2.FONT_HERSHEY_PLAIN,5,(255,50,50),4)
     cv2.imshow('frame', frame)
+    # gray = cv2.cvtColor(frame, cv2.COLOR_BAYER_BG2GRAY)
+    # cv2.imshow('frame',gray)
     # Press q to close the window 
-    print(prediction)
+   # print('pred = ', prediction)
     if cv2.waitKey(30) & 0xFF == ord('q'):
       break
-  cv2.imshow()
+  # cv2.imshow()
   cap.release()
   # Destroy all the windows
   cv2.destroyAllWindows()
@@ -32,17 +42,18 @@ def get_winner(computer_choice , user_choice):
   computer_wins = 0
   user_wins= 0
   rounds_played = 0
-  while computer_wins <3 and user_wins <3:
+  while computer_wins <3 and user_wins <3:a
     
     computer_choice = random.choice(list1[:3])
-    print(computer_choice)
+    #print('comp = ', computer_choice)
     user_choice = get_prediction()
-    print(user_choice)
+    print('usr = ', user_choice, 'comp = ', computer_choice)
+    cv2.putText(frame, f'{user_choice}- {computer_choice}',)
     rounds_played +=1
     if computer_choice == user_choice:
       print("It is a tie!")
       winner = "tie"
-    elif (computer_choice == "Rock"and user_choice == "Scissors") or (computer_choice == "Paper" and user_choice == "Rock") or (computer_choice == "Scissors"and user_choice == "Paper"):
+    elif (computer_choice == "rock"and user_choice == "scissors") or (computer_choice == "paper" and user_choice == "rock") or (computer_choice == "scissors"and user_choice == "paper"):
       print("You lost")
       winner = "computer_choice"
       computer_wins +=1
@@ -54,14 +65,15 @@ def get_winner(computer_choice , user_choice):
       
     # return winner
   if computer_wins == 3:
-     print(computer_wins, "is a winner")
+     print("computer is a winner")
   elif user_wins == 3 :
-      print(user_wins, "is a winner")
+      print("user is a winner")
   else:
       print("The game is over")
 
 
 get_winner("t1","t2")
+
 
 
 
