@@ -1,51 +1,121 @@
 # Computer Vision RPS
 ## Milestone 1: Set Up the Environment!
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+ In this Milestone, we have made a folder called computer-vision and connected it to the git hub. 
 
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
 ## Milestone 2: Create the computer version:
-##Love is a set of emotions and behaviors characterized by intimacy, passion, and commitment. It involves care, closeness, protectiveness, attraction, affection, and trust. Love can vary in intensity and can change over time. It is associated with a range of positive emotions, including happiness, excitement, life satisfaction, and euphoria, but it can also result in negative emotions such as jealousy and stress.1
+In this Milestone we have made a use of websit called Teachable Machine. 
+Click here :
+[https://teachablemachine.withgoogle.com/]
 
-When it comes to love, some people would say it is one of the most important human emotions. Yet despite being one of the most studied behaviors, it is still the least understood. For example, researchers debate whether love is a biological or cultural phenomenon.2
+Go to Teachable-Machine  to start creating the model. Each class is trained with images of yourself showing each option to the camera. The "Nothing" class represents the lack of option in the image. Remember that the more images you train with, the more accurate the model will be.
+Download the model from the "Tensorflow" tab in Teachable-Machine. The model should be named keras_model.h5 and the text file containing the labels should be named labels.txt.
 
-Love is most likely influenced by both biology and culture. Although hormones and biology are important, the way we express and experience love is also influenced by our personal conceptions of love.
+The files you are downloading contain the structure and the parameters of a deep learning model. They are not files that can be run, and they do not contain anything readable if you look inside. Later, you will load them into your Python application in the next milestone.
 
- 5 Psychological Theories of Love
-How Do You Know?
-What are some of the signs of love? Researchers have made distinctions between feelings of liking and loving another person.
-
-Zick Rubin's Scales of Liking and Loving
-According to psychologist Zick Rubin, romantic love is made up of three elements:3
-
-Attachment: Needing to be with another person and desiring physical contact and approval
-Caring: Valuing the other person's happiness and needs as much as your own
-Intimacy: Sharing private thoughts, feelings, and desires with the other person
-Based on this view of romantic love, Rubin developed two questionnaires to measure these variables, known as Rubin's Scales of Liking and Loving. Whereas people tend to view people they like as pleasant, love is marked by being devoted, possessive, and confiding in one another. 
-
- The Difference Between Liking and Loving
-Types of Love
-Not all forms of love are the same, and psychologists have identified a number of different types of love that people may experience.1﻿ These types of love include:
+Make sure you push the model and labels to your GitHub repository after committing.
 
 ## Milestone 3: Install the Dependencies:
-Friendship: This type of love involves liking someone and sharing a certain degree of intimacy.
-Infatuation: This is a form of love that often involves intense feelings of attraction without a sense of commitment; it often takes place early in a relationship and may deepen into a more lasting love.
-Passionate love: This type of love is marked by intense feelings of longing and attraction; it often involves an idealization of the other person and a need to maintain constant physical closeness.
-Compassionate/companionate love: This form of love is marked by trust, affection, intimacy, and commitment.
-Unrequited love: This form of love happens when one person loves another who does not return those feelings.
-Robert Sternberg's Triangular Theory of Love
-Specifically, psychologist Robert Sternberg developed his well-regarded triangular theory of love in the early 1980s.4 Much research has built upon his work and demonstrated its universality across cultures.4
+---
+## Task 1 :
+Before you can use the model, you need to install the libraries that it depends on.
 
-Sternberg broke love into three components—intimacy, passion, and commitment—that interact to produce seven types of love.
+Create a conda environment and then install the necessary requirements. You need **opencv-python, tensorflow, and ipykernel**. Start by creating the environment, activate it, and then install pip by running the following command in your terminal conda install pip. Then, to install the rest of the libraries, run pip install **library**
 
-## Milestone 4: Create Rock- Paper- Scissor - Game:
-Friendship: This type of love involves liking someone and sharing a certain degree of intimacy.
-Infatuation: This is a form of love that often involves intense feelings of attraction without a sense of commitment; it often takes place early in a relationship and may deepen into a more lasting love.
-Passionate love: This type of love is marked by intense feelings of longing and attraction; it often involves an idealization of the other person and a need to maintain constant physical closeness.
-Compassionate/companionate love: This form of love is marked by trust, affection, intimacy, and commitment.
-Unrequited love: This form of love happens when one person loves another who does not return those feelings.
-Robert Sternberg's Triangular Theory of Love
-Specifically, psychologist Robert Sternberg developed his well-regarded triangular theory of love in the early 1980s.4 Much research has built upon his work and demonstrated its universality across cultures.4
+## **Important**: If you are on Ubuntu, the latest version of Tensorflow doens't work with the default version of Python. When creating the virtual environment, use Python 3.8 instead by running:
 
-Sternberg broke love into three components—intimacy, passion, and commitment—that interact to produce seven types of love.
+**conda create -n my_env python=3.8**
+
+Where my_env is the name of the environment you want to create.
+After that, the libraries you have to install are the ones mentioned above.
+***
+## Task2: 
+## Are you on a Mac with an M1 chip?
+Install Miniconda. First, create a virtual environment by running the following commands:
+
+***conda create -n tensorflow-env python=3.9***
+
+***conda activate tensorflow-env***
+
+***conda install pip***
+
+Then, follow the steps from the section that says "arm64: Apple Silicon" from this link.
+Once you get tensorflow for Mac, you will install opencv for Mac by running the following commands:
+
+***conda install -c conda-forge opencv***
+***
+## Task3 : Complete the installation of dependencies
+Finally, make sure you install ipykernel by running the following command:
+
+***pip install ipykernel***
+
+Once you installed everything (regardless of the operating system) create a requirements.txt file by running the following command:
+
+**pip list > requirements.txt**
+***
+## Task4: Check the model is working
+To ensure your model is working first download this file 
+click here 
+
+[https://aicore-files.s3.amazonaws.com/Foundations/Python_Programming/RPS-Template.py]
+
+once done make sure that you have the correct name for the model, the correct name for the labels, and that the model and this file are in the same folder
+***
+## Milestone 4: Create a Rock-Paper-Scissor-Game
+This code needs to randomly choose an option (rock, paper, or scissors) and then ask the user for an input.Create another file called manual_rps.py that will be used to play the game without the camera.You will need to use the random module to pick a random option between rock, paper, and scissors and the input function to get the user's choice.
+
+Create two functions: get_computer_choice and get_user_choice.
+The first function will randomly pick an option between "Rock", "Paper", and "Scissors" and return the choice.The second function will ask the user for an input and return it.
+
+Wrap the code in a function called get_winner and return the winner.This function takes two arguments: computer_choice and user_choice.If the computer wins, the function should print "You lost", if the user wins, the function should print "You won!", and if it's a tie, the function should print "It is a tie!".
+Create and call a new function called play.Inside the function you will call all the other three functions you've created (get_computer_choice, get_user_choice, and get_winner)
+.Now when you run the code, it should play a game of Rock-Paper-Scissors, and it should print whether the computer or you won.
+```
+import random
+def get_computer_choice():
+  list1 = ["Rock","Paper","Scissors"]
+  return random.choice(list1)
+      
+def get_user_choice(): 
+  pick_one = input("choose one from list")  
+  return pick_one
+
+def get_winner(computer_choice , user_choice):
+  if computer_choice == user_choice:
+    print("It is a tie!")
+    winner = "tie"
+  elif (computer_choice == "Rock"and user_choice == "Scissors") or (computer_choice == "Paper" and user_choice == "Rock") or (computer_choice == "Scissors"and user_choice == "Paper"):
+    print("You lost")
+    winner = "computer_choice"
+  else:
+    print("You won!")
+    winner = "user_choice"
+  return winner
+
+def play():
+  t1= get_computer_choice()
+  print(t1)
+  t2= get_user_choice()
+  print(t2)
+  t3= get_winner(t1,t2)
+  print(t3)
+
+play()
+
+```
+**Test the code and see who wins!!!**
+***
+## Milestone 5
+Replace the hard-coded user guess with the output of the computer vision model. Create a new file called camera_rps.py where you will write the new code.
+
+Create a new function called get_prediction that will return the output of the model you used earlier.
+
+Remember that the output of the model you downloaded is a list of probabilities for each class. You need to pick the class with the highest probability. So, for example, assuming you trained the model in this order: "Rock", "Paper", "Scissors", and "Nothing", if the first element of the list is 0.8, the second element is 0.1, the third element is 0.05, and the fourth element is 0.05, then, the model predicts that you showed "Rock" to the camera with a confidence of 0.8.
+
+The model can make many predictions at once if given many images. In your case you only give it one image at a time. That means that the first element in the list returned from the model is a list of probabilities for the four different classes. Print the response of the model if you are unclear of this.
+```
+```
+Thank you !!!
+
+
+
