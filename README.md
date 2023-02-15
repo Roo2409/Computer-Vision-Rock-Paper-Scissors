@@ -117,5 +117,6 @@ The model can make many predictions at once if given many images. In your case y
 ```
 Thank you !!!
 
+![flower image](C:\Intel\my_folder\computer-vision-rock-paper-scissors\RGB_image1.jpg)
 
 
