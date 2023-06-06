@@ -28,16 +28,11 @@ def get_prediction():
     cv2.putText(frame, "User_choice",(50,50),cv2.FONT_HERSHEY_PLAIN,5,(255,50,50),4)
     cv2.putText(frame, count_down,(150,150),cv2.FONT_HERSHEY_PLAIN,5,(255,50,50),4)
     cv2.imshow('frame', frame)
-    # gray = cv2.cvtColor(frame, cv2.COLOR_BAYER_BG2GRAY)
-    # cv2.imshow('frame',gray)
-    # Press q to close the window 
-   # print('pred = ', prediction)
     if cv2.waitKey(30) & 0xFF == ord('q'):
       break
   # cv2.imshow()
 
   cap.release()
-  # Destroy all the windows
   cv2.destroyAllWindows()
   return prediction
 
