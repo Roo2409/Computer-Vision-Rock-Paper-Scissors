@@ -3,6 +3,8 @@ from keras.models import load_model
 import numpy as np
 import time
 import random
+cap = cv2.VideoCapture(0)
+
 list1 = ["rock","paper","scissors","nothing"]
 def get_prediction():
   model = load_model('keras_model.h5')
@@ -33,6 +35,7 @@ def get_prediction():
     if cv2.waitKey(30) & 0xFF == ord('q'):
       break
   # cv2.imshow()
+
   cap.release()
   # Destroy all the windows
   cv2.destroyAllWindows()
@@ -42,37 +45,40 @@ def get_winner(computer_choice , user_choice):
   computer_wins = 0
   user_wins= 0
   rounds_played = 0
-  while computer_wins <3 and user_wins <3:a
-    
-    computer_choice = random.choice(list1[:3])
-    #print('comp = ', computer_choice)
-    user_choice = get_prediction()
-    print('usr = ', user_choice, 'comp = ', computer_choice)
-    cv2.putText(frame, f'{user_choice}- {computer_choice}',)
-    rounds_played +=1
-    if computer_choice == user_choice:
-      print("It is a tie!")
-      winner = "tie"
-    elif (computer_choice == "rock"and user_choice == "scissors") or (computer_choice == "paper" and user_choice == "rock") or (computer_choice == "scissors"and user_choice == "paper"):
-      print("You lost")
-      winner = "computer_choice"
-      computer_wins +=1
-    
-    else:
-      print("You won!")
-      winner = "user_choice"
-      user_wins +=1
+
+  while True:
+    if computer_wins <3 and user_wins <3:
+      #ret, frame = cap.read()
+      computer_choice = random.choice(list1)
+      print('comp = ', computer_choice)
+      user_choice = get_prediction()
+      print('usr = ', user_choice, 'comp = ', computer_choice)
+      cv2.putText(frame, f'{user_choice}- {computer_choice}',(50,50),cv2.FONT_HERSHEY_PLAIN,5,(255,50,50),4)
+      rounds_played +=1
+      if computer_choice == user_choice:
+        print("It is a tie!")
+        winner = "tie"
+      elif (computer_choice == "rock"and user_choice == "scissors") or (computer_choice == "paper" and user_choice == "rock") or (computer_choice == "scissors"and user_choice == "paper"):
+        print("You lost")
+        winner = "computer_choice"
+        computer_wins +=1
+      
+      else:
+        print("You won!")
+        winner = "user_choice"
+        user_wins +=1
       
     # return winner
-  if computer_wins == 3:
-     print("computer is a winner")
-  elif user_wins == 3 :
-      print("user is a winner")
-  else:
-      print("The game is over")
+      if computer_wins == 3:
+        print("computer is a winner")
+      elif user_wins == 3 :
+          print("user is a winner")
+      else:
+          print("The game is over")
 
 
-get_winner("t1","t2")
+get_winner('computer_choice' , 'user_choice')
+get_prediction()
 
 
 
